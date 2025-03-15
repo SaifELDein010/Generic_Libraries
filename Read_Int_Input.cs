@@ -14,7 +14,7 @@ namespace Generic_Libraries
         }
 
 
-        public static int ReadNumber(string errorMessage = "Not vaild number, Enter a vaild number: ")
+        public static int ReadNumber(string errorMessage = "Not a vaild number, Enter a vaild number: ")
         {
 
             int number = 0;
@@ -35,18 +35,41 @@ namespace Generic_Libraries
         }
 
 
-        public static int ReadNumber(string message, string errorMessage = "Not vaild number, Enter a vaild number: ")
+        public static int ReadNumber(string message, string errorMessage = "Not a vaild number, Enter a vaild number: ")
         {
 
             Console.Write(message);
             return ReadNumber(errorMessage);
 
         }
-        
 
 
+        public static int ReadNumberBetweenRange(int from, int to, string errorMessage = "Out of range, Enter a vaild number: ")
+        {
+
+            int number = ReadNumber();
+
+            while(!(number >= from && number <= to))
+            {
+
+                Console.Write(errorMessage);
+                number = ReadNumber();
+
+            }
+
+            return number;
+
+        }
 
 
+        public static int ReadNumberBetweenRange(int from, int to, string message, string errorMessage = "Out of range, Enter a vaild number: ")
+        {
+
+            Console.Write(message);
+            return ReadNumberBetweenRange(from, to, errorMessage);
+
+
+        }
 
     }
 }
