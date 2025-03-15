@@ -71,5 +71,31 @@ namespace Generic_Libraries
 
         }
 
+
+        public static int ReadNumberFrom(int from, string errorMessage = "Out of range, Enter a vaild number: ")
+        {
+
+            int number = ReadNumber();
+
+            while (!(number >= from))
+            {
+
+                Console.Write(errorMessage);
+                number = ReadNumber();
+
+            }
+
+            return number;
+
+        }
+
+        public static int ReadNumberFrom(int from, string message, string errorMessage = "Out of range, Enter a vaild number: ")
+        {
+
+            Console.Write(message);
+            return ReadNumberFrom(from, errorMessage);
+
+        }
+
     }
 }
